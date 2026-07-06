@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<title>NOMAD Core — Screenshot Reference</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    width: 1200px;
+    height: 900px;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #0a0a0a;
+    color: #fff;
+  }
+
+  /* ── Header ─────────────────────────────── */
+  header {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    height: 72px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    z-index: 10;
+  }
+
+  .logo {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  nav {
+    display: flex;
+    gap: 36px;
+  }
+
+  nav a {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+
+  .btn-nav {
+    font-size: 13px;
+    font-weight: 600;
+    background: #fff;
+    color: #0a0a0a;
+    padding: 8px 20px;
+    border-radius: 999px;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+
+  /* ── Hero ────────────────────────────────── */
+  .hero {
+    position: absolute;
+    top: 72px; left: 0; right: 0;
+    height: 580px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 48px;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 0%, rgba(255,255,255,0.04) 0%, transparent 70%),
+      #0a0a0a;
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    margin-bottom: 24px;
+  }
+
+  .hero-title {
+    font-size: 72px;
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: #fff;
+    margin-bottom: 24px;
+  }
+
+  .hero-title span {
+    color: rgba(255,255,255,0.35);
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    color: rgba(255,255,255,0.4);
+    max-width: 440px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .btn-primary {
+    background: #fff;
+    color: #0a0a0a;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 13px 30px;
+    border-radius: 999px;
+    text-decoration: none;
+    letter-spacing: 0.01em;
+  }
+
+  .btn-ghost {
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 13px 30px;
+    border-radius: 999px;
+    text-decoration: none;
+    letter-spacing: 0.01em;
+  }
+
+  /* ── Features strip ──────────────────────── */
+  .features {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 248px;
+    background: #fff;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-top: 1px solid #e5e5e5;
+  }
+
+  .feature {
+    padding: 32px 48px;
+    border-right: 1px solid #e5e5e5;
+  }
+
+  .feature:last-child { border-right: none; }
+
+  .feature-icon {
+    width: 36px;
+    height: 36px;
+    background: #0a0a0a;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .feature-icon svg { width: 18px; height: 18px; color: #fff; }
+
+  .feature h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #0a0a0a;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+
+  .feature p {
+    font-size: 13px;
+    color: #737373;
+    line-height: 1.6;
+  }
+
+  /* ── Watermark ───────────────────────────── */
+  .watermark {
+    position: absolute;
+    bottom: 16px;
+    right: 20px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.15);
+    pointer-events: none;
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <span class="logo">NOMAD Core</span>
+    <nav>
+      <a href="#">About</a>
+      <a href="#">Work</a>
+      <a href="#">Services</a>
+      <a href="#">Journal</a>
+    </nav>
+    <a href="#" class="btn-nav">Get in touch</a>
+  </header>
+
+  <section class="hero">
+    <p class="hero-eyebrow">Pure Code — NOMAD Core v0.1.0</p>
+    <h1 class="hero-title">
+      Built to perform.<br>
+      <span>Designed to last.</span>
+    </h1>
+    <p class="hero-sub">A production-ready WordPress framework engineered for performance, accessibility, and long-term maintainability.</p>
+    <div class="hero-ctas">
+      <a href="#" class="btn-primary">Explore</a>
+      <a href="#" class="btn-ghost">Get in touch</a>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5"/></svg>
+      </div>
+      <h3>Code-First</h3>
+      <p>No page builders. Clean PHP templates, Tailwind CSS v4, and Vanilla JS ES Modules.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+      </div>
+      <h3>Performance-First</h3>
+      <p>Minimal dependencies, optimised asset loading, and Core Web Vitals as the benchmark.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12z"/></svg>
+      </div>
+      <h3>Accessibility-First</h3>
+      <p>WCAG 2.1 AA compliance built into every component from the ground up.</p>
+    </div>
+  </section>
+
+  <span class="watermark">NOMAD Core · Pure Code</span>
+
+<!--
+  ════════════════════════════════════════════════
+  HOW TO CREATE screenshot.png
+  ════════════════════════════════════════════════
+  1. Open this file in Chrome or Edge
+  2. DevTools → Toggle device toolbar (Ctrl+Shift+M)
+  3. Set dimensions to 1200 × 900
+  4. Right-click page → "Capture screenshot" (or use
+     DevTools > ⋮ > Run command > "Capture full size screenshot")
+  5. Save the file as screenshot.png in the theme root
+  ════════════════════════════════════════════════
+-->
+</body>
+</html>
