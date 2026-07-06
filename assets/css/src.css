@@ -193,6 +193,21 @@
 	.entry-content ol { @apply list-decimal pl-6 mb-4 space-y-2; }
 	.entry-content a { @apply text-green hover:text-green-light underline; }
 
+	/* ── Infinite marquee ───────────────────── */
+	@keyframes marquee {
+		from { transform: translateX(0); }
+		to   { transform: translateX(-50%); }
+	}
+
+	.marquee-track {
+		animation: marquee 28s linear infinite;
+		will-change: transform;
+	}
+
+	.marquee-track:hover {
+		animation-play-state: paused;
+	}
+
 	/* ── Scroll-triggered animations ────────── */
 	[data-animate] {
 		opacity: 0;
