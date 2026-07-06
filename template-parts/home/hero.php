@@ -3,6 +3,9 @@
  * Homepage — Hero section.
  * Reference: /reference/hero.png
  *
+ * Hero content uses CSS-only keyframe animations (no JS dependency)
+ * so content is never invisible on page load.
+ *
  * @package NomadCore
  */
 
@@ -26,25 +29,22 @@ $marquee_items = array(
 <section class="relative h-screen flex flex-col justify-end bg-navy-dark"
          style="background-image: url('<?php echo esc_url( $hero_img ); ?>'); background-size: cover; background-position: center right;">
 
-	<!-- Gradient overlay — z-0, purely decorative -->
+	<!-- Gradient overlay -->
 	<div class="absolute inset-0 z-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent pointer-events-none" aria-hidden="true"></div>
 
-	<!-- Content — z-10 guarantees it sits above the overlay -->
+	<!-- Content -->
 	<div class="relative z-10 container-site pb-10 lg:pb-14 pt-20">
 		<div class="max-w-2xl">
 
-			<h1 class="font-display text-5xl sm:text-6xl lg:text-[72px] font-bold text-white uppercase leading-[0.95] tracking-tight mb-5"
-			    data-animate>
+			<h1 class="hero-animate hero-animate-1 font-display text-5xl sm:text-6xl lg:text-[72px] font-bold text-white uppercase leading-[0.95] tracking-tight mb-5">
 				<?php esc_html_e( '200K in client savings through precise auditing.', 'nomad-core' ); ?>
 			</h1>
 
-			<p class="text-sm text-white/70 leading-relaxed max-w-xl mb-5 tracking-[-0.02em]"
-			   data-animate data-animate-delay="1">
+			<p class="hero-animate hero-animate-2 text-sm text-white/70 leading-relaxed max-w-xl mb-5 tracking-[-0.02em]">
 				<?php esc_html_e( 'We help businesses reduce costs through a suite of financial services, including accounting, bookkeeping, company formation, trademark registration, management consulting, feasibility studies, and corporate finance.', 'nomad-core' ); ?>
 			</p>
 
-			<div class="flex flex-wrap items-center gap-6 mb-6 text-[10px] tracking-[-0.02em] text-white/60"
-			     data-animate data-animate-delay="2">
+			<div class="hero-animate hero-animate-3 flex flex-wrap items-center gap-6 mb-6 text-[10px] tracking-[-0.02em] text-white/60">
 				<a href="mailto:faris@farisco.ae" class="hover:text-white transition-colors duration-150">
 					faris@farisco.ae
 				</a>
@@ -53,7 +53,7 @@ $marquee_items = array(
 				</a>
 			</div>
 
-			<div data-animate data-animate-delay="3">
+			<div class="hero-animate hero-animate-4">
 				<a href="<?php echo esc_url( home_url( '/contact' ) ); ?>"
 				   class="btn-gold uppercase tracking-widest text-[10px] px-5 py-2.5">
 					<?php esc_html_e( 'Book a call', 'nomad-core' ); ?>
@@ -63,7 +63,7 @@ $marquee_items = array(
 		</div>
 	</div>
 
-	<!-- Infinite marquee strip — z-10 -->
+	<!-- Infinite marquee strip -->
 	<div class="relative z-10 bg-green overflow-hidden" aria-label="<?php esc_attr_e( 'Services', 'nomad-core' ); ?>">
 		<div class="marquee-track flex items-center py-3 w-max">
 			<?php for ( $pass = 0; $pass < 2; $pass++ ) : ?>
