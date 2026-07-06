@@ -1,6 +1,33 @@
 @import "tailwindcss";
 
 /* ─────────────────────────────────────────────
+   Self-hosted fonts — Conduit ITC
+   ───────────────────────────────────────────── */
+@font-face {
+	font-family: 'Conduit ITC';
+	src: url('../fonts/ConduitITC-Light.woff2') format('woff2');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Conduit ITC';
+	src: url('../fonts/ConduitITC-Regular.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Conduit ITC';
+	src: url('../fonts/ConduitITC-Bold.woff2') format('woff2');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* ─────────────────────────────────────────────
    Design Tokens — Faris & Co.
    ───────────────────────────────────────────── */
 @theme {
@@ -17,7 +44,7 @@
 	--color-gold-subtle:  #EEF7F3;
 
 	/* Typography */
-	--font-display: 'Barlow Condensed', 'Arial Narrow', system-ui;
+	--font-display: 'Conduit ITC', 'Barlow Condensed', 'Arial Narrow', sans-serif;
 	--font-body:    'DM Sans', system-ui;
 }
 

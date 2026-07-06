@@ -36,7 +36,7 @@ $marquee_items = array(
 	<div class="relative z-10 container-site pb-10 lg:pb-14 pt-20">
 		<div class="max-w-2xl">
 
-			<h1 class="hero-animate hero-animate-1 font-display text-5xl sm:text-6xl lg:text-[72px] font-bold text-white uppercase leading-[0.95] tracking-tight mb-5">
+			<h1 class="hero-animate hero-animate-1 font-display font-normal text-[48px] sm:text-[64px] lg:text-[85px] text-white uppercase leading-[0.8] mb-5">
 				<?php esc_html_e( '200K in client savings through precise auditing.', 'nomad-core' ); ?>
 			</h1>
 
