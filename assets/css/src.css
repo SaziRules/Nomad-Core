@@ -1,23 +1,173 @@
 @import "tailwindcss";
 
-/* Design tokens — override or extend Tailwind defaults
+/* ─────────────────────────────────────────────
+   Design Tokens
+   ───────────────────────────────────────────── */
 @theme {
-    --color-brand:    #000000;
-    --color-accent:   #000000;
-    --font-sans:      "Inter", sans-serif;
-    --font-heading:   "Inter", sans-serif;
-    --breakpoint-xl:  1280px;
-}
-*/
+	--color-gold:        #B8862A;
+	--color-gold-light:  #CA9A3E;
+	--color-gold-subtle: #FDF5E4;
 
-/* Base styles — applied to raw HTML elements */
+	--color-charcoal:    #0D0F14;
+}
+
+/* ─────────────────────────────────────────────
+   Base
+   ───────────────────────────────────────────── */
 @layer base {
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
 }
 
-/* Reusable component classes */
+/* ─────────────────────────────────────────────
+   Components
+   ───────────────────────────────────────────── */
 @layer components {
-}
 
-/* One-off overrides */
-@layer utilities {
+	/* Layout */
+	.container-site {
+		@apply max-w-7xl mx-auto px-6 lg:px-10;
+	}
+
+	/* Labels */
+	.section-label {
+		@apply text-xs font-semibold tracking-[0.15em] uppercase text-gold;
+	}
+
+	/* ── Buttons ─────────────────────────────── */
+	.btn-primary {
+		@apply inline-flex items-center justify-center gap-2
+		       bg-charcoal text-white text-sm font-semibold
+		       px-8 py-4 rounded-full
+		       transition-colors duration-150
+		       hover:bg-neutral-800
+		       focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-charcoal;
+	}
+
+	.btn-gold {
+		@apply inline-flex items-center justify-center gap-2
+		       bg-gold text-white text-sm font-semibold
+		       px-8 py-4 rounded-full
+		       transition-colors duration-150
+		       hover:bg-gold-light
+		       focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold;
+	}
+
+	.btn-outline {
+		@apply inline-flex items-center justify-center gap-2
+		       border border-neutral-300 text-neutral-700 text-sm font-semibold
+		       px-8 py-4 rounded-full
+		       transition-colors duration-150
+		       hover:border-charcoal hover:text-charcoal
+		       focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-charcoal;
+	}
+
+	.btn-outline-white {
+		@apply inline-flex items-center justify-center gap-2
+		       border border-white/30 text-white text-sm font-semibold
+		       px-8 py-4 rounded-full
+		       transition-colors duration-150
+		       hover:border-white hover:bg-white/10
+		       focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white;
+	}
+
+	/* ── Header ──────────────────────────────── */
+	#site-header {
+		@apply fixed top-0 inset-x-0 z-50
+		       bg-white border-b border-neutral-100
+		       transition-shadow duration-200;
+	}
+
+	#site-header.is-scrolled {
+		@apply shadow-md border-transparent;
+	}
+
+	/* ── Desktop navigation ──────────────────── */
+	.primary-nav,
+	.primary-nav ul {
+		@apply flex items-center list-none m-0 p-0 gap-0.5;
+	}
+
+	.primary-nav > li {
+		@apply list-none;
+	}
+
+	.primary-nav a {
+		@apply text-sm font-medium text-neutral-600
+		       hover:text-charcoal transition-colors duration-150
+		       px-3 py-2 rounded-lg block;
+	}
+
+	.primary-nav .current-menu-item > a,
+	.primary-nav .current_page_item > a {
+		@apply text-charcoal font-semibold;
+	}
+
+	/* ── Mobile navigation ───────────────────── */
+	.mobile-nav,
+	.mobile-nav ul {
+		@apply flex flex-col list-none m-0 p-0;
+	}
+
+	.mobile-nav > li {
+		@apply list-none border-b border-neutral-100 last:border-0;
+	}
+
+	.mobile-nav a {
+		@apply text-base font-medium text-neutral-700
+		       hover:text-charcoal transition-colors duration-150
+		       py-4 px-6 block;
+	}
+
+	.mobile-nav .current-menu-item > a {
+		@apply text-charcoal font-semibold;
+	}
+
+	/* ── Hamburger animation ─────────────────── */
+	[data-nav-toggle] span {
+		@apply transition-all duration-200 origin-center;
+	}
+
+	[data-nav-toggle][aria-expanded="true"] span:nth-child(1) {
+		transform: translateY(7px) rotate(45deg);
+	}
+
+	[data-nav-toggle][aria-expanded="true"] span:nth-child(2) {
+		@apply opacity-0 scale-x-0;
+	}
+
+	[data-nav-toggle][aria-expanded="true"] span:nth-child(3) {
+		transform: translateY(-7px) rotate(-45deg);
+	}
+
+	/* ── Inner pages — push below fixed header ── */
+	body:not(.home) #main {
+		@apply pt-20;
+	}
+
+	/* ── Inner page layout ───────────────────── */
+	.page-inner {
+		@apply max-w-7xl mx-auto px-6 lg:px-10 py-16 lg:py-24;
+	}
+
+	.page-inner h1 {
+		@apply text-4xl lg:text-5xl font-bold text-charcoal tracking-tight mb-6;
+	}
+
+	.entry-content {
+		@apply text-neutral-600 leading-relaxed max-w-3xl;
+	}
+
+	.entry-content p { @apply mb-4; }
+	.entry-content h2 { @apply text-2xl font-bold text-charcoal mt-10 mb-4; }
+	.entry-content h3 { @apply text-xl font-semibold text-charcoal mt-8 mb-3; }
+	.entry-content ul { @apply list-disc pl-6 mb-4 space-y-2; }
+	.entry-content ol { @apply list-decimal pl-6 mb-4 space-y-2; }
+	.entry-content a { @apply text-gold hover:text-gold-light underline; }
 }
