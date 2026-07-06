@@ -3,9 +3,6 @@
  * Homepage — Hero section.
  * Reference: /reference/hero.png
  *
- * Full-viewport height. Text bottom-left. Left-gradient overlay.
- * Green infinite-scroll marquee strip at the bottom edge.
- *
  * @package NomadCore
  */
 
@@ -26,14 +23,14 @@ $marquee_items = array(
 ?>
 
 <!-- Hero -->
-<section class="relative overflow-hidden bg-navy-dark h-screen flex flex-col"
+<section class="relative h-screen flex flex-col justify-end bg-navy-dark"
          style="background-image: url('<?php echo esc_url( $hero_img ); ?>'); background-size: cover; background-position: center right;">
 
-	<!-- Left-to-right gradient overlay -->
-	<div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent pointer-events-none" aria-hidden="true"></div>
+	<!-- Gradient overlay — z-0, purely decorative -->
+	<div class="absolute inset-0 z-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent pointer-events-none" aria-hidden="true"></div>
 
-	<!-- Hero content — fills space, text anchored to bottom -->
-	<div class="relative flex-1 flex flex-col justify-end container-site pb-12 lg:pb-16 pt-[72px]">
+	<!-- Content — z-10 guarantees it sits above the overlay -->
+	<div class="relative z-10 container-site pb-10 lg:pb-14 pt-20">
 		<div class="max-w-2xl">
 
 			<h1 class="font-display text-5xl sm:text-6xl lg:text-[72px] font-bold text-white uppercase leading-[0.95] tracking-tight mb-5"
@@ -41,7 +38,7 @@ $marquee_items = array(
 				<?php esc_html_e( '200K in client savings through precise auditing.', 'nomad-core' ); ?>
 			</h1>
 
-			<p class="text-sm lg:text-[14px] text-white/70 leading-relaxed max-w-xl mb-5 tracking-[-0.02em]"
+			<p class="text-sm text-white/70 leading-relaxed max-w-xl mb-5 tracking-[-0.02em]"
 			   data-animate data-animate-delay="1">
 				<?php esc_html_e( 'We help businesses reduce costs through a suite of financial services, including accounting, bookkeeping, company formation, trademark registration, management consulting, feasibility studies, and corporate finance.', 'nomad-core' ); ?>
 			</p>
@@ -66,24 +63,17 @@ $marquee_items = array(
 		</div>
 	</div>
 
-	<!-- Infinite marquee strip -->
-	<div class="relative bg-green overflow-hidden" aria-hidden="true">
+	<!-- Infinite marquee strip — z-10 -->
+	<div class="relative z-10 bg-green overflow-hidden" aria-label="<?php esc_attr_e( 'Services', 'nomad-core' ); ?>">
 		<div class="marquee-track flex items-center py-3 w-max">
-
-			<?php
-			/* Render twice — second pass is the seamless clone */
-			for ( $pass = 0; $pass < 2; $pass++ ) :
-				foreach ( $marquee_items as $item ) :
-			?>
-			<span class="flex items-center gap-4 text-[10px] font-medium text-white uppercase tracking-[-0.02em] leading-none whitespace-nowrap px-4">
-				<?php echo esc_html( $item ); ?>
-				<span class="text-white/40 text-[6px]">&#9632;</span>
-			</span>
-			<?php
-				endforeach;
-			endfor;
-			?>
-
+			<?php for ( $pass = 0; $pass < 2; $pass++ ) : ?>
+				<?php foreach ( $marquee_items as $item ) : ?>
+				<span class="flex items-center gap-4 text-[10px] font-medium text-white uppercase tracking-[-0.02em] leading-none whitespace-nowrap px-5">
+					<?php echo esc_html( $item ); ?>
+					<span class="text-white/40 text-[6px]" aria-hidden="true">&#9632;</span>
+				</span>
+				<?php endforeach; ?>
+			<?php endfor; ?>
 		</div>
 	</div>
 
