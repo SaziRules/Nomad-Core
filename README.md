@@ -1,4 +1,4 @@
-# Pure Core v1.0
+# Nomad Core v1.0
 
 > Developed by **Pure Code**
 
