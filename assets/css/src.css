@@ -1,14 +1,24 @@
 @import "tailwindcss";
 
 /* ─────────────────────────────────────────────
-   Design Tokens
+   Design Tokens — Faris & Co.
    ───────────────────────────────────────────── */
 @theme {
-	--color-gold:        #B8862A;
-	--color-gold-light:  #CA9A3E;
-	--color-gold-subtle: #FDF5E4;
+	--color-navy:         #2F3A87;   /* header, nav bg */
+	--color-navy-dark:    #1D2959;   /* footer, dark sections */
+	--color-green:        #17924D;   /* CTA primary */
+	--color-green-light:  #1EC767;   /* CTA hover */
+	--color-green-subtle: #EEF7F3;   /* light tint bg */
+	--color-charcoal:     #242323;   /* body headings */
 
-	--color-charcoal:    #0D0F14;
+	/* Legacy aliases — keep for reuse across projects */
+	--color-gold:         #17924D;
+	--color-gold-light:   #1EC767;
+	--color-gold-subtle:  #EEF7F3;
+
+	/* Typography */
+	--font-display: 'Barlow Condensed', 'Arial Narrow', system-ui;
+	--font-body:    'DM Sans', system-ui;
 }
 
 /* ─────────────────────────────────────────────
@@ -17,11 +27,13 @@
 @layer base {
 	html {
 		scroll-behavior: smooth;
+		font-family: var(--font-body);
 	}
 
 	body {
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
+		color: #242323;
 	}
 }
 
@@ -37,14 +49,14 @@
 
 	/* Labels */
 	.section-label {
-		@apply text-xs font-semibold tracking-[0.15em] uppercase text-gold;
+		@apply text-xs font-semibold tracking-[0.15em] uppercase text-green;
 	}
 
 	/* ── Buttons ─────────────────────────────── */
 	.btn-primary {
 		@apply inline-flex items-center justify-center gap-2
 		       bg-charcoal text-white text-sm font-semibold
-		       px-8 py-4 rounded-full
+		       px-7 py-3.5 rounded-full
 		       transition-colors duration-150
 		       hover:bg-neutral-800
 		       focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-charcoal;
@@ -52,17 +64,28 @@
 
 	.btn-gold {
 		@apply inline-flex items-center justify-center gap-2
-		       bg-gold text-white text-sm font-semibold
-		       px-8 py-4 rounded-full
+		       bg-green text-white text-sm font-semibold
+		       px-7 py-3.5 rounded-full
+		       border border-green-light/40
 		       transition-colors duration-150
-		       hover:bg-gold-light
-		       focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold;
+		       hover:bg-green-light
+		       focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green;
+	}
+
+	.btn-green {
+		@apply inline-flex items-center justify-center gap-2
+		       bg-green text-white text-sm font-semibold
+		       px-7 py-3.5 rounded-full
+		       border border-green-light/40
+		       transition-colors duration-150
+		       hover:bg-green-light
+		       focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green;
 	}
 
 	.btn-outline {
 		@apply inline-flex items-center justify-center gap-2
 		       border border-neutral-300 text-neutral-700 text-sm font-semibold
-		       px-8 py-4 rounded-full
+		       px-7 py-3.5 rounded-full
 		       transition-colors duration-150
 		       hover:border-charcoal hover:text-charcoal
 		       focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-charcoal;
@@ -71,7 +94,7 @@
 	.btn-outline-white {
 		@apply inline-flex items-center justify-center gap-2
 		       border border-white/30 text-white text-sm font-semibold
-		       px-8 py-4 rounded-full
+		       px-7 py-3.5 rounded-full
 		       transition-colors duration-150
 		       hover:border-white hover:bg-white/10
 		       focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white;
@@ -80,12 +103,12 @@
 	/* ── Header ──────────────────────────────── */
 	#site-header {
 		@apply fixed top-0 inset-x-0 z-50
-		       bg-white border-b border-neutral-100
+		       bg-navy
 		       transition-shadow duration-200;
 	}
 
 	#site-header.is-scrolled {
-		@apply shadow-md border-transparent;
+		@apply shadow-lg shadow-navy/40;
 	}
 
 	/* ── Desktop navigation ──────────────────── */
@@ -99,14 +122,14 @@
 	}
 
 	.primary-nav a {
-		@apply text-sm font-medium text-neutral-600
-		       hover:text-charcoal transition-colors duration-150
+		@apply text-sm font-medium text-white/75
+		       hover:text-white transition-colors duration-150
 		       px-3 py-2 rounded-lg block;
 	}
 
 	.primary-nav .current-menu-item > a,
 	.primary-nav .current_page_item > a {
-		@apply text-charcoal font-semibold;
+		@apply text-white font-semibold;
 	}
 
 	/* ── Mobile navigation ───────────────────── */
@@ -116,20 +139,20 @@
 	}
 
 	.mobile-nav > li {
-		@apply list-none border-b border-neutral-100 last:border-0;
+		@apply list-none border-b border-white/10 last:border-0;
 	}
 
 	.mobile-nav a {
-		@apply text-base font-medium text-neutral-700
-		       hover:text-charcoal transition-colors duration-150
+		@apply text-base font-medium text-white/80
+		       hover:text-white transition-colors duration-150
 		       py-4 px-6 block;
 	}
 
 	.mobile-nav .current-menu-item > a {
-		@apply text-charcoal font-semibold;
+		@apply text-white font-semibold;
 	}
 
-	/* ── Hamburger animation ─────────────────── */
+	/* ── Hamburger ───────────────────────────── */
 	[data-nav-toggle] span {
 		@apply transition-all duration-200 origin-center;
 	}
@@ -146,12 +169,11 @@
 		transform: translateY(-7px) rotate(-45deg);
 	}
 
-	/* ── Inner pages — push below fixed header ── */
+	/* ── Inner pages ─────────────────────────── */
 	body:not(.home) #main {
-		@apply pt-20;
+		@apply pt-[72px];
 	}
 
-	/* ── Inner page layout ───────────────────── */
 	.page-inner {
 		@apply max-w-7xl mx-auto px-6 lg:px-10 py-16 lg:py-24;
 	}
@@ -169,5 +191,25 @@
 	.entry-content h3 { @apply text-xl font-semibold text-charcoal mt-8 mb-3; }
 	.entry-content ul { @apply list-disc pl-6 mb-4 space-y-2; }
 	.entry-content ol { @apply list-decimal pl-6 mb-4 space-y-2; }
-	.entry-content a { @apply text-gold hover:text-gold-light underline; }
+	.entry-content a { @apply text-green hover:text-green-light underline; }
+
+	/* ── Scroll-triggered animations ────────── */
+	[data-animate] {
+		opacity: 0;
+		transform: translateY(24px);
+		transition: opacity 0.65s ease, transform 0.65s ease;
+	}
+
+	[data-animate].is-visible {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	[data-animate-delay="1"] { transition-delay: 0.1s; }
+	[data-animate-delay="2"] { transition-delay: 0.2s; }
+	[data-animate-delay="3"] { transition-delay: 0.3s; }
+	[data-animate-delay="4"] { transition-delay: 0.4s; }
+	[data-animate-delay="5"] { transition-delay: 0.5s; }
+	[data-animate-delay="6"] { transition-delay: 0.6s; }
+
 }
