@@ -99,7 +99,7 @@
 				</div>
 
 				<a href="<?php echo esc_url( home_url( '/contact' ) ); ?>"
-				   class="btn-gold text-xs px-5 py-2.5 uppercase tracking-wider">
+				   class="btn-header">
 					<?php esc_html_e( 'Book a call', 'nomad-core' ); ?>
 				</a>
 
@@ -108,7 +108,7 @@
 			<!-- Mobile: CTA + hamburger -->
 			<div class="flex items-center gap-2 flex-shrink-0 lg:hidden">
 				<a href="<?php echo esc_url( home_url( '/contact' ) ); ?>"
-				   class="btn-gold text-xs px-4 py-2 uppercase tracking-wider">
+				   class="btn-header">
 					<?php esc_html_e( 'Book a call', 'nomad-core' ); ?>
 				</a>
 
@@ -144,7 +144,7 @@
 			?>
 			<div class="px-6 py-5 border-t border-white/10 space-y-3">
 				<a href="<?php echo esc_url( home_url( '/contact' ) ); ?>"
-				   class="btn-gold w-full justify-center uppercase tracking-wider text-xs">
+				   class="btn-header w-full justify-center">
 					<?php esc_html_e( 'Book a call', 'nomad-core' ); ?>
 				</a>
 				<div class="flex items-center justify-center gap-5 text-xs text-white/50">

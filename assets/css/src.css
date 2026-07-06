@@ -72,6 +72,17 @@
 		       focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green;
 	}
 
+	/* Header-specific CTA — navy-dark bg, gray text, matches Framer token exactly */
+	.btn-header {
+		@apply inline-flex items-center justify-center
+		       bg-navy-dark text-[#DBDBDB] text-[9px] font-semibold
+		       px-4 leading-[2em] rounded-full uppercase
+		       tracking-[-0.2px]
+		       transition-colors duration-150
+		       hover:bg-navy-dark/80
+		       focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/40;
+	}
+
 	.btn-green {
 		@apply inline-flex items-center justify-center gap-2
 		       bg-green text-white text-sm font-semibold
