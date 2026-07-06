@@ -2,7 +2,7 @@
 
 > Developed by **Pure Code**
 
-`Pure Core` is our signature, production-ready WordPress framework engineered to deliver elite site speeds, structural security, and uncompromised design fidelity. By bypassing heavy, legacy visual page builders, it bridges modern front-end engineering paradigms with native WordPress architectures.
+`Nomad Core` is our signature, production-ready WordPress framework engineered to deliver elite site speeds, structural security, and uncompromised design fidelity. By bypassing heavy, legacy visual page builders, it bridges modern front-end engineering paradigms with native WordPress architectures.
 
 ## 🛠️ The Tech Stack
 
