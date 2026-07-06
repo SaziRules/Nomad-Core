@@ -1,0 +1,24 @@
+/*
+Theme Name:        Nomad Core
+Theme URI:         https://purecode.studio/themes/nomad-core
+Author:            Pure Code
+Author URI:        https://purecode.studio
+Description:       Nomad Core is a production-ready, code-first WordPress starter theme engineered by Pure Code for performance, accessibility, and long-term maintainability. Built without page builders or CSS frameworks beyond Tailwind CSS v4. Uses Vanilla JavaScript ES Modules, strict WordPress coding standards, and a modular inc/ architecture designed to serve as a scalable, reusable foundation for professional client websites.
+Version:           1.0.0
+Requires at least: 6.3
+Tested up to:      6.7
+Requires PHP:      8.1
+License:           GNU General Public License v2 or later
+License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain:       nomad-core
+Domain Path:       /languages
+Tags:              custom-menu, featured-images, translation-ready, accessibility-ready, custom-logo
+*/
+
+/*
+ * This file is NOT a stylesheet. WordPress requires it to identify the theme.
+ * All styles are authored in assets/css/src.css and compiled to assets/css/style.css.
+ *
+ * Build:  npm run build
+ * Watch:  npm run watch
+ */

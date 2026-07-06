@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+/* Design tokens — override or extend Tailwind defaults
+@theme {
+    --color-brand:    #000000;
+    --color-accent:   #000000;
+    --font-sans:      "Inter", sans-serif;
+    --font-heading:   "Inter", sans-serif;
+    --breakpoint-xl:  1280px;
+}
+*/
+
+/* Base styles — applied to raw HTML elements */
+@layer base {
+}
+
+/* Reusable component classes */
+@layer components {
+}
+
+/* One-off overrides */
+@layer utilities {
+}
